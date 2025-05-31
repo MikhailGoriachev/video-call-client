@@ -1,25 +1,25 @@
 import { types as mediasoupTypes } from "mediasoup-client";
-import { SignalingChannel } from "./signaling/SignalingChannel";
+import { SignalingChannel } from "./SignalingChannel";
 import {
   ProducerId, //
   RoomId,
   UserId,
-} from "./types/keys";
+} from "../types/keys";
 import {
   ClientToServerMessageType, //
   DirectionType,
   ServerToClientMessageType,
-} from "./signaling/messages";
+} from "../types/messages";
 import {
   DeviceNotCreatedError, //
   ReceiveTransportNotCreatedError,
   SendTransportNotCreatedError,
-} from "./errors";
-import { Bitrate, VIDEO_GOOGLE_START_BITRATE } from "./constants";
-import { MediaManager } from "./transport/MediaManager";
-import { User } from "./models/User";
-import { AsyncQueue } from "../utils/AsyncQueue";
-import { EventEmitter } from "../utils/EventEmmiter";
+} from "../errors";
+import { Bitrate, VIDEO_GOOGLE_START_BITRATE } from "../constants";
+import { MediaManager } from "./MediaManager";
+import { User } from "../models/User";
+import { AsyncQueue } from "../../utils/AsyncQueue";
+import { EventEmitter } from "../../utils/EventEmmiter";
 
 export enum VideoCallClientEventTypes {
   CONNECTED = "connected",

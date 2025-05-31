@@ -1,8 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { VideoCallClient, VideoCallClientEventTypes } from "../VideoCallClient";
-import { SignalingChannel } from "../signaling/SignalingChannel";
-import { ClientToServerMessageType, ServerToClientMessageType } from "../signaling/messages";
-import { DirectionType } from "../signaling/messages";
+import { VideoCallClient, VideoCallClientEventTypes } from "../core/VideoCallClient";
+import { SignalingChannel } from "../core/SignalingChannel";
+import { ClientToServerMessageType, ServerToClientMessageType } from "../types/messages";
+import { DirectionType } from "../types/messages";
 import { UserId, RoomId, ProducerId } from "../types/keys";
 
 vi.mock("mediasoup-client", () => {

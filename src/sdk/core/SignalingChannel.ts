@@ -1,4 +1,4 @@
-import { ClientToServerMessage, ServerToClientMessage, ServerToClientMessageType } from "./messages";
+import { ClientToServerMessage, ServerToClientMessage, ServerToClientMessageType } from "../types/messages";
 import { SignalingChannelNotOpenError } from "../errors";
 import { WebSocketEvents } from "../constants";
 import { EventEmitter } from "../../utils/EventEmmiter";
