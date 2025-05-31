@@ -1,9 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { VideoCallClient, VideoCallClientEventTypes } from "../core/VideoCallClient";
 import { SignalingChannel } from "../core/SignalingChannel";
-import { ClientToServerMessageType, ServerToClientMessageType } from "../types/messages";
-import { DirectionType } from "../types/messages";
+import { ClientToServerMessageType, ServerToClientMessageType, DirectionType } from "../types/messages";
 import { UserId, RoomId, ProducerId } from "../types/keys";
+import { VideoCallClient, VideoCallClientEventTypes } from "../core/VideoCallClient";
 
 vi.mock("mediasoup-client", () => {
   return {
@@ -61,6 +60,20 @@ describe("VideoCallClient", () => {
     } as unknown as SignalingChannel;
 
     client = new VideoCallClient(signaling);
+
+    Object.defineProperty(globalThis.navigator, "mediaDevices", {
+      value: {
+        getUserMedia: vi.fn().mockResolvedValue({
+          getVideoTracks: vi.fn(() => [{ kind: "video", stop: vi.fn() }]),
+          getAudioTracks: vi.fn(() => [{ kind: "audio", stop: vi.fn() }]),
+          getTracks: vi.fn(() => [
+            { kind: "video", stop: vi.fn() },
+            { kind: "audio", stop: vi.fn() },
+          ]),
+        }),
+      },
+      configurable: true,
+    });
   });
 
   it("should emit CONNECTED after joinCall", async () => {
@@ -90,7 +103,7 @@ describe("VideoCallClient", () => {
 
     await client.joinCall(roomId, userId);
 
-    await new Promise((res) => setTimeout(res, 10));
+    await new Promise((res) => setTimeout(res, 15));
 
     expect(onConnected).toHaveBeenCalled();
     expect(signaling.sendMessage).toHaveBeenCalledWith({

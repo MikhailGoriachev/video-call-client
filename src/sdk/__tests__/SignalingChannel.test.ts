@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { SignalingChannel } from "../signaling/SignalingChannel";
+import { SignalingChannel } from "../core/SignalingChannel";
 import { SignalingChannelNotOpenError } from "../errors";
-import { ServerToClientMessageType } from "../signaling/messages";
+import { ServerToClientMessageType } from "../types/messages";
 import { WebSocketEvents } from "../constants";
 
 const dummyMessage = {

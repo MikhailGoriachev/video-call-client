@@ -1,14 +1,14 @@
-import { ClientToServerMessage } from "./messages";
-import { MediasoupServer } from "./MediasoupServer";
 import config from "./config";
-import { AppController } from "./controllers/AppController";
-import { RoomsController } from "./controllers/RoomsController";
+import { AppController } from "./core/AppController";
+import { RoomsController } from "./core/RoomsController";
 import {
   WebSocket, //
   WebSocketServer,
 } from "ws";
 import { Logger } from "../utils/Logger";
 import { LogScopes } from "./types/logScopes";
+import { ClientToServerMessage } from "./types/messages";
+import { MediasoupServer } from "./core/MediasoupServer";
 
 (async () => {
   const mediasoupServer = new MediasoupServer(

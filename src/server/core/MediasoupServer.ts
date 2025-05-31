@@ -1,9 +1,9 @@
 import { createWorker } from "mediasoup";
 import * as mediasoupTypes from "mediasoup/node/lib/types";
-import { ConsumerId, ProducerId, TransportId } from "./types/keys";
-import { CannotConsumeError, DiedWorkerError, ProducerNotFoundError, TransportNotFoundError } from "./errors";
-import { Logger } from "../utils/Logger";
-import { LogScopes } from "./types/logScopes";
+import { ConsumerId, ProducerId, TransportId } from "../types/keys";
+import { CannotConsumeError, DiedWorkerError, ProducerNotFoundError, TransportNotFoundError } from "../errors";
+import { Logger } from "../../utils/Logger";
+import { LogScopes } from "../types/logScopes";
 
 export class MediasoupServer {
   private worker: mediasoupTypes.Worker;

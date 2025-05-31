@@ -1,12 +1,12 @@
 import { WebSocket } from "ws";
-import { MediasoupServer } from "../MediasoupServer";
+import { MediasoupServer } from "./MediasoupServer";
 import {
   ClientToServerMessage,
   ClientToServerMessageType,
   DirectionType,
   ServerToClientMessage,
   ServerToClientMessageType,
-} from "../messages";
+} from "../types/messages";
 import { User } from "../models/User";
 import { UserSession, UserSessionTask } from "../models/UserSession";
 import { ProducerId, RoomId, UserId } from "../types/keys";

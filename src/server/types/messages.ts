@@ -1,4 +1,4 @@
-import { ConsumerId, ProducerId, RoomId, TransportId, UserId } from "./types/keys";
+import { ConsumerId, ProducerId, RoomId, TransportId, UserId } from "./keys";
 import { types as mediasoupClientTypes } from "mediasoup-client";
 import * as mediasoupTypes from "mediasoup/node/lib/types";
 

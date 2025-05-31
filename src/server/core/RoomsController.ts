@@ -1,10 +1,10 @@
 import * as mediasoupTypes from "mediasoup/node/lib/types";
 import { ProducerId, RoomId, UserId } from "../types/keys";
 import { Room } from "../models/Room";
-import { MediasoupServer } from "../MediasoupServer";
+import { MediasoupServer } from "./MediasoupServer";
 import { User } from "../models/User";
 import { TransportNotFoundError, UserNotFoundError } from "../errors";
-import { DirectionType } from "../messages";
+import { DirectionType } from "../types/messages";
 import { Logger } from "../../utils/Logger";
 import { LogScopes } from "../types/logScopes";
 
