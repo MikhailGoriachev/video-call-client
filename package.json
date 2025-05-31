@@ -1,0 +1,32 @@
+{
+  "name": "video-call-sdk",
+  "version": "1.0.0",
+  "scripts": {
+    "build:sdk": "tsc -p tsconfig.sdk.json",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build:test-client": "vite build --config vite.test-client.config.ts",
+    "build": "npm run build:sdk && npm run build:server && npm run build:test-client",
+    "start:server": "node dist/server/server/index.js",
+    "start:test-client": "vite --config vite.test-client.config.ts",
+    "test": "vitest"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "mediasoup": "^3.16.0",
+    "mediasoup-client": "^3.11.0",
+    "ws": "^8.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@types/ws": "^8.18.1",
+    "esbuild": "^0.25.5",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
+  }
+}

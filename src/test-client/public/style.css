@@ -1,0 +1,84 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #fff;
+  font-family: "Segoe UI", sans-serif;
+  color: #202124;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 320px);
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.video-container {
+  background-color: #000;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  width: 320px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: black;
+}
+
+#controls {
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  border-top: 1px solid #ddd;
+}
+
+#controls button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+#controls .btn-primary {
+  background-color: #1a73e8;
+  color: white;
+}
+
+#controls .btn-danger {
+  background-color: #ea4335;
+  color: white;
+}
+
+#controls .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+#controls button:hover {
+  filter: brightness(1.1);
+}

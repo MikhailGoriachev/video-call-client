@@ -1,0 +1,15 @@
+FROM node:24-slim
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+RUN npm run build:sdk
+
+RUN npm run build:test-client
+
+RUN npm install -g serve
+
+CMD ["serve", "-s", "dist/test-client", "-l", "5173"]

@@ -1,0 +1,25 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: src/server/Dockerfile.server
+    ports:
+      - "8088:8088/tcp"
+      - "50000-50100:50000-50100/udp"
+    networks:
+      - video-net
+    restart: unless-stopped
+
+  test-client:
+    build:
+      context: .
+      dockerfile: src/test-client/Dockerfile.test-client
+    ports:
+      - "5173:5173"
+    networks:
+      - video-net
+    restart: unless-stopped
+
+networks:
+  video-net:
+    driver: bridge
